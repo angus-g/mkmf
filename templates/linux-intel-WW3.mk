@@ -5,10 +5,10 @@
 
 ############
 # Command Macros
-FC = ifort
-CC = icc
-CXX = icpc
-LD = ifort
+FC = mpifort
+CC = mpicc
+CXX = mpic++
+LD = mpifort
 
 #######################
 # Build target macros
@@ -84,7 +84,7 @@ FPPFLAGS = -fpp -Wp,-w $(INCLUDES)
 FFPPLAGS += $(shell nf-config --fflags)
 
 # Base set of Fortran compiler flags
-FFLAGS := -fno-alias -stack_temps -safe_cray_ptr -ftz -assume byterecl -i4 -r8 -nowarn -g -sox -traceback
+FFLAGS := -fno-alias -stack_temps -safe_cray_ptr -ftz -assume byterecl -i4 -nowarn -g -sox -traceback
 
 # Flags based on perforance target (production (OPT), reproduction (REPRO), or debug (DEBUG)
 FFLAGS_OPT = -O2
